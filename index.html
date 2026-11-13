@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agente de vaijes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor-principal">
+    <!-- Contenedor general que respeta la estructura del boceto -->
+    <section class="zona-de-chat" aria-label="zona de chat">
+      <header class="encabezado-agente">
+        <h1>agente de vaijes</h1>
+        <p>Recomendaciones de lugares y viajes de todo el mundo</p>
+      </header>
+
+      <!-- Historial visual de mensajes del chat -->
+      <div id="mensajes-chat" class="mensajes-chat" role="log" aria-live="polite"></div>
+
+      <!-- Estado de la comunicación (cargando / error) -->
+      <div id="estado-chat" class="estado-chat" aria-live="assertive"></div>
+
+      <!-- Zona inferior integrada para escribir y enviar -->
+      <form id="formulario-chat" class="zona-de-escritura" aria-label="zona de escritura">
+        <label for="entrada-mensaje" class="oculto-visual">Escribí tu consulta de viaje</label>
+        <input
+          type="text"
+          id="entrada-mensaje"
+          name="entrada-mensaje"
+          placeholder="Preguntá por un destino, ruta o recomendación..."
+          maxlength="500"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="boton-enviar">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Carga obligatoria de config.js antes que script.js -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
